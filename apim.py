@@ -28,7 +28,7 @@ def menu():
 
     elif secim == "1":
         sehir=input("Please Enter New City : ")
-        sehir=sehir.upper()
+
         return sehir
 
     else:
@@ -45,17 +45,19 @@ while True:
 
     sehir=menu()
     sehir=buyut(sehir)
+    if  hava.get_info(sehir)==None:
+        menu()
+    else:
+        weather_main=hava.get_info(sehir).get("weather")[0].get("main")
+        description = hava.get_info(sehir).get("weather")[0].get("description")
+        temp = hava.get_info(sehir).get("main").get("temp")
+        temp=int(temp)-272
+        humidity=hava.get_info(sehir).get("main").get("humidity")
+        temp_min = hava.get_info(sehir).get("main").get("temp_min")
+        temp_min=int(temp_min)-272
+        temp_max = hava.get_info(sehir).get("main").get("temp_max")
+        temp_max=int(temp_max)-272
+        speed = hava.get_info(sehir).get("wind").get("speed")
 
-    weather_main=hava.get_info(sehir).get("weather")[0].get("main")
-    description = hava.get_info(sehir).get("weather")[0].get("description")
-    temp = hava.get_info(sehir).get("main").get("temp")
-    temp=int(temp)-272.
-    humidity=hava.get_info(sehir).get("main").get("humidity")
-    temp_min = hava.get_info(sehir).get("main").get("temp_min")
-    temp_min=int(temp_min)-272
-    temp_max = hava.get_info(sehir).get("main").get("temp_max")
-    temp_max=int(temp_max)-272
-    speed = hava.get_info(sehir).get("wind").get("speed")
-
-    my_wheather_list = [weather_main, description, temp, humidity, temp_min, temp_max, speed]
-    print(my_wheather_list)
+        my_wheather_list = [weather_main, description, temp, humidity, temp_min, temp_max, speed]
+        print(my_wheather_list)
