@@ -58,7 +58,7 @@ while True:
         temp_max = hava.get_info(sehir).get("main").get("temp_max")
         temp_max=int(temp_max)-272
         speed = hava.get_info(sehir).get("wind").get("speed")
-
+        print("""                                    {}          """.format(sehir))
         my_wheather_list = [weather_main, description, temp, humidity, temp_min, temp_max, speed]
         #print(my_wheather_list)
         veri=my_wheather_list
