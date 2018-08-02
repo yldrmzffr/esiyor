@@ -58,7 +58,7 @@ while True:
         temp_max = hava.get_info(sehir).get("main").get("temp_max")
         temp_max=int(temp_max)-272
         speed = hava.get_info(sehir).get("wind").get("speed")
-        print("""                                    {}          """.format(sehir))
+        print("\n\n\n                   	 {}          ".format(sehir))
         my_wheather_list = [weather_main, description, temp, humidity, temp_min, temp_max, speed]
         #print(my_wheather_list)
         veri=my_wheather_list
@@ -72,17 +72,17 @@ while True:
 
         clear = ("""
                       \   /     {name}
-                       .-.      {temp}    
-                    ― (   ) ―   {max}-{min}   
-                       `-’      {nem}  
-                      /   \     -->{hiz}        
+                       .-.      {temp}
+                    ― (   ) ―   {max}-{min}
+                       `-’      {nem}
+                      /   \     -->{hiz}
                  """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
         parcali = ("""
 
                      \  /       {name}
-                   _ /"".-.     {temp}    
-                     \_(   ).   {max}-{min}       
-                     /(___(__)  {nem}  
+                   _ /"".-.     {temp}
+                     \_(   ).   {max}-{min}
+                     /(___(__)  {nem}
 
 
 
@@ -91,9 +91,9 @@ while True:
         hard = ("""
 
                        .-.      {name}
-                      (   ).    {temp}    
-                     (___(__)   {max}-{min}       
-                    ‚‘⚡‘‚⚡‚‘    {nem}  
+                      (   ).    {temp}
+                     (___(__)   {max}-{min}
+                    ‚‘⚡‘‚⚡‚‘    {nem}
                                  {hiz}
                  """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
@@ -110,9 +110,9 @@ while True:
         kar = ("""
 
                       .-.       {name}
-                     (   ).     {temp}    
-                    (___(__)    {max}-{min}  
-                     * * * *    {nem}  
+                     (   ).     {temp}
+                    (___(__)    {max}-{min}
+                     * * * *    {nem}
                      * * * *    {hiz}
 
                  """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
@@ -120,7 +120,7 @@ while True:
         sis = ("""
 
                  _ - _ - _ -    {name}
-                 _ - _ - _      {temp} 
+                 _ - _ - _      {temp}
                  _ - _ - _ -    {max}-{min}
                                 {nem}
                                 {hiz}
@@ -130,11 +130,11 @@ while True:
         yok=("""
 
                       |===\      {name}
-                      |    |     Temp{temp} 
+                      |    |     Temp{temp}
                       | * *|     {max}-{min}
                       |  | |     {nem}
                       |-//-|     {hiz}
-                      ------ 
+                      ------
 
                      """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
         temp = veri[2]
