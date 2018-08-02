@@ -44,5 +44,5 @@ while True:
 
     sehir=menu()
     sehir=buyut(sehir)
-    print(hava.get_info(sehir))
 
+    print(hava.get_info(sehir))
