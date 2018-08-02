@@ -1,24 +1,6 @@
-import json
-import requests
-class havalar():
-    sehir = None
-    def init(self):
-        pass
-    def get_info(self,sehir):
-        self.sehir = sehir
-        try:
-            data = requests.get("http://api.openweathermap.org/data/2.5/weather?q={id}&appid=fe76c224322cdde0049342cb45d26b04".format(id=sehir)).content.decode('utf-8')
-            return data
-        except:
-            print("Error: Can not reach ")
 
-
-    def auto_get(self):
-        data = json.loads(requests.get("https://ipapi.co/json").content.decode('utf-8')).get("city")
-        self.sehir = data
-        return data
-
-hava = havalar()
+import Esemeyen_sinifi
+hava = Esemeyen_sinifi.Havalar()
 
 def menu():
     konum=hava.auto_get()
@@ -41,7 +23,7 @@ def menu():
 
     else:
         print("Yanlış seçim yaptınız.Lütfen tekrar seçim yapınız : \n")
-        menu(konum)
+        menu()
 
 while True:
     print("*******************\n")
@@ -49,3 +31,4 @@ while True:
     print("\n")
     print("*******************\n")
     sehir=menu()
+
