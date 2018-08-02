@@ -60,7 +60,7 @@ while True:
         speed = hava.get_info(sehir).get("wind").get("speed")
 
         my_wheather_list = [weather_main, description, temp, humidity, temp_min, temp_max, speed]
-        print(my_wheather_list)
+        #print(my_wheather_list)
         veri=my_wheather_list
         desc = veri[1].find("broken")
         name = veri[0]
@@ -126,6 +126,17 @@ while True:
                                 {hiz}
 
                  """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+
+        yok=("""
+
+                      |===\      {name}
+                      |    |     Temp{temp} 
+                      | * *|     {max}-{min}
+                      |  | |     {nem}
+                      |-//-|     {hiz}
+                      ------ 
+
+                     """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
         temp = veri[2]
         maxt = veri[5]
         mint = veri[4]
@@ -140,13 +151,4 @@ while True:
         elif veri[0] == "Clouds":
             print(parcali)
         else:
-            print("""
-
-              |===\      {name}
-              |    |     {temp} 
-              | * *|     {max}-{min}
-              |  | |     {nem}
-              |-//-|     {hiz}
-              ------ 
-
-             """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+            print(yok)
