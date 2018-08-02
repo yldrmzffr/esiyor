@@ -1,6 +1,16 @@
 import Esemeyen_sinifi
 hava = Esemeyen_sinifi.Havalar()
 
+
+def buyut(sehir):
+	sehirbuyuk=sehir.upper()
+	translationTable = str.maketrans("ĞÜŞÖÇİ", "GUSOCI")
+	sehirbuyuk = sehirbuyuk.translate(translationTable)
+
+	return sehirbuyuk
+
+
+
 def menu():
     konum=hava.auto_get()
     print("suan {} şehrindesiniz".format(konum))
@@ -30,4 +40,6 @@ while True:
     print("\n")
     print("*******************\n")
     sehir=menu()
+    sehir=buyut(sehir)
+    print(hava.get_info(sehir))
 
