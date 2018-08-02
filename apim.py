@@ -34,11 +34,14 @@ def menu():
         print("Yanlış seçim yaptınız.Lütfen tekrar seçim yapınız \n")
         menu()
 
+print("*******************\n")
+print("    HOSGELDİNİZ      \n")
+print("\n")
+print("*******************\n")
+
+
 while True:
-    print("*******************\n")
-    print("    HOSGELDİNİZ      \n")
-    print("\n")
-    print("*******************\n")
+
     sehir=menu()
     sehir=buyut(sehir)
     print(hava.get_info(sehir))
