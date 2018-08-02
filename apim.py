@@ -13,11 +13,12 @@ def buyut(sehir):
 
 def menu():
     konum=hava.auto_get()
-    print("suan {} şehrindesiniz".format(konum))
-    print("yapmak istediğiniz işlemi seçiniz : ")
-    print("0 : Bulunduğunuz şehrin hava durumu")
-    print("1 : Baska bir şehir")
-    secim = input("seciminizi yapınız : ")
+    print("Current Location:{}".format(konum))
+    print("Menu: ")
+    print("0 : Current Location")
+    print("1 : Another Location")
+    secim = input("Please Enter Choice "
+
 
 
     if secim == "0":
@@ -26,16 +27,16 @@ def menu():
 
 
     elif secim == "1":
-        sehir=input("şehir ismi giriniz : ")
+        sehir=input("Please Enter New City : ")
         sehir=sehir.upper()
         return sehir
 
     else:
-        print("Yanlış seçim yaptınız.Lütfen tekrar seçim yapınız \n")
+        print("Incorrect Enter: Try again. \n")
         menu()
 
 print("*******************\n")
-print("    HOSGELDİNİZ      \n")
+print("    WELCOME      \n")
 print("\n")
 print("*******************\n")
 
