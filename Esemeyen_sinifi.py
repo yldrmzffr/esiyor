@@ -15,5 +15,10 @@ class Havalar():
 
     def auto_get(self):
         data = json.loads(requests.get("https://ipapi.co/json").content.decode('utf-8')).get("city")
+        if data != None:
+            data = json.loads(requests.get("http://ip-api.com/json").content.decode('utf-8')).get("city")
+            if data != None:
+                data = json.loads(requests.get("http://extreme-ip-lookup.com/json/").content.decode('utf-8')).get("city")
+
         self.sehir = data
         return data
