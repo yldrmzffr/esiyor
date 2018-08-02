@@ -47,5 +47,6 @@ def sehir_sec(sehir):
 while True:
     print("*******************\n")
     print("    HOSGELDİNİZ      \n")
+    print("\n")
     print("*******************\n")
     sehir_sec(hava.auto_get())
