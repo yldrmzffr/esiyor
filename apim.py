@@ -42,7 +42,15 @@ print("*******************\n")
 
 while True:
 
+
     sehir=menu()
     sehir=buyut(sehir)
 
-    print(hava.get_info(sehir))
+    weather_main=hava.get_info(sehir).get("weather")[0].get("main")
+    print(weather_main)
+    description = hava.get_info(sehir).get("weather")[0].get("description")
+    print(description)
+    temp = hava.get_info(sehir).get("main").get("temp")
+    print(temp)
+    humidity=hava.get_info(sehir).get("main").get("humidity")
+    print(humidity)
