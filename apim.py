@@ -1,4 +1,3 @@
-
 import Esemeyen_sinifi
 hava = Esemeyen_sinifi.Havalar()
 
@@ -22,7 +21,7 @@ def menu():
         return sehir
 
     else:
-        print("Yanlış seçim yaptınız.Lütfen tekrar seçim yapınız : \n")
+        print("Yanlış seçim yaptınız.Lütfen tekrar seçim yapınız \n")
         menu()
 
 while True:
