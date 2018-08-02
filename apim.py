@@ -61,3 +61,92 @@ while True:
 
         my_wheather_list = [weather_main, description, temp, humidity, temp_min, temp_max, speed]
         print(my_wheather_list)
+        veri=my_wheather_list
+        desc = veri[1].find("broken")
+        name = veri[0]
+        temp = veri[2]
+        maxt = veri[5]
+        mint = veri[4]
+        nem = veri[3]
+        hiz = veri[6]
+
+        clear = ("""
+                      \   /     {name}
+                       .-.      {temp}    
+                    ― (   ) ―   {max}-{min}   
+                       `-’      {nem}  
+                      /   \     -->{hiz}        
+                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+        parcali = ("""
+
+                     \  /       {name}
+                   _ /"".-.     {temp}    
+                     \_(   ).   {max}-{min}       
+                     /(___(__)  {nem}  
+
+
+
+                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+
+        hard = ("""
+
+                       .-.      {name}
+                      (   ).    {temp}    
+                     (___(__)   {max}-{min}       
+                    ‚‘⚡‘‚⚡‚‘    {nem}  
+                                 {hiz}
+                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+
+        yagmur = ("""
+
+
+                   _`/"".-.     {name}
+                    ,\_(   ).   {temp}
+                     /(___(__)  {max}-{min}
+                     ‚‘‚‘‚‘‚‘   {nem}
+                                 {hiz}
+                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+
+        kar = ("""
+
+                      .-.       {name}
+                     (   ).     {temp}    
+                    (___(__)    {max}-{min}  
+                     * * * *    {nem}  
+                     * * * *    {hiz}
+
+                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+
+        sis = ("""
+
+                 _ - _ - _ -    {name}
+                 _ - _ - _      {temp} 
+                 _ - _ - _ -    {max}-{min}
+                                {nem}
+                                {hiz}
+
+                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+        temp = veri[2]
+        maxt = veri[5]
+        mint = veri[4]
+        nem = veri[3]
+        hiz = veri[6]
+        if veri[0] == "Clear":
+            print(clear)
+        elif veri[0] == "Rain" :
+            print(yagmur)
+        elif veri[0] == "Fog":
+            print(sis)
+        elif veri[0] == "Clouds":
+            print(parcali)
+        else:
+            print("""
+
+              |===\      {name}
+              |    |     {temp} 
+              | * *|     {max}-{min}
+              |  | |     {nem}
+              |-//-|     {hiz}
+              ------ 
+
+             """)
