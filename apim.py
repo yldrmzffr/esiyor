@@ -17,7 +17,7 @@ def menu():
     print("Menu: ")
     print("0 : Current Location")
     print("1 : Another Location")
-    secim = input("Please Enter Choice "
+    secim = input("Please Enter Choice ")
 
 
 
