@@ -149,4 +149,4 @@ while True:
               |-//-|     {hiz}
               ------ 
 
-             """)
+             """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
