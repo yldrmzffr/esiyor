@@ -1,10 +1,8 @@
 import json
 import requests
 class havalar():
-
     sehir = None
-
-    def __init__(self):
+    def init(self):
         pass
     def get_info(self,sehir):
         self.sehir = sehir
@@ -14,5 +12,10 @@ class havalar():
          except:
             print("Error: Can not reach ")
 
+
+    def auto_get(self):
+        data = json.loads(requests.get("https://ipapi.co/json").content.decode('utf-8')).get("city")
+        self.sehir = data
+        return data
+
 hava = havalar()
-hava.get_info("KONYA")
