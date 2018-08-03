@@ -20,7 +20,7 @@ def buyut(sehir):
 def menu():
     konum=hava.auto_get()
     logging.info("Konumu Tespit Edildi. Konumu: {}".format(konum))
-    print("Current Location:{}".format(konum))
+    print("Current Location: {}".format(konum))
     print("Menu: ")
     print("0 : Current Location")
     print("1 : Another Location")
@@ -41,9 +41,16 @@ def menu():
         logging.warning("{} destekleyan karakter..".format(secim))
         menu()
 
-print("*******************\n")
-print("      WELCOME    \n ")
-print("*******************\n")
+
+
+print("""
+*******************************************************
+    .-.                                   \   /
+   (   ).                                  .-.
+  (___(__)   	WELCOME to ESIYOR       ― (   ) ―
+ ‚‘⚡‘‚⚡‚‘                              ////////
+
+*******************************************************""")
 logging.info("HOŞGELDİN EKRANI BASILDI")
 
 
