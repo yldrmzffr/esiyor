@@ -12,7 +12,7 @@ class Havalar():
         pass
     def get_info(self,sehir):
         self.sehir = sehir
-        logging.info("{} ile sorgulama yapılmak istendi.".format(sehir))
+
         try:
             data = json.loads(requests.get("http://api.openweathermap.org/data/2.5/weather?q={id}&appid=fe76c224322cdde0049342cb45d26b04".format(id=sehir)).content.decode('utf-8'))
             if data.get("cod")==200:

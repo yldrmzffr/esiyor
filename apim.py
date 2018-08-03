@@ -20,7 +20,7 @@ def buyut(sehir):
 def menu():
     konum=hava.auto_get()
     logging.info("Konumu Tespit Edildi. Konumu: {}".format(konum))
-    print("Current Location: {}".format(konum))
+    print("Current Location:{}".format(konum))
     print("Menu: ")
     print("0 : Current Location")
     print("1 : Another Location")
@@ -41,21 +41,16 @@ def menu():
         logging.warning("{} destekleyan karakter..".format(secim))
         menu()
 
-
-
-print("""
-*******************************************************
-    .-.                                   \   /
-   (   ).                                  .-.
-  (___(__)   	WELCOME to ESIYOR       ― (   ) ―
- ‚‘⚡‘‚⚡‚‘                              ////////
-
-*******************************************************""")
+print("*******************\n")
+print("      WELCOME    \n ")
+print("*******************\n")
 logging.info("HOŞGELDİN EKRANI BASILDI")
 
 
 while True:
     sehir=buyut(menu())
+    logging.info("{} ile sorgulama yapılmak istendi.".format(sehir))
+
     if  hava.get_info(sehir)==None:
         menu()
     else:
@@ -72,3 +67,4 @@ while True:
         print("\n\n\n                   	 {}          ".format(sehir))
         my_wheather_list = [weather_main, description, temp, humidity, temp_min, temp_max, speed]
         cizdir.load(my_wheather_list)
+        logging.info("Hava durumu goruntelendi")

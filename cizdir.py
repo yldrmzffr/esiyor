@@ -7,81 +7,72 @@ def load(veri):
     nem = veri[3]
     hiz = veri[6]
     clear = ("""
-                  \   /     {name}({desc})
-                   .-.      Temp: {temp}
-                ― (   ) ―   Max-Min Temp: {max} - {min}
-                   `-’      Hum: {nem}
-                  /   \     WndSpd: {hiz}
-             """).format(desc=desc,name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+                  \   /     {name}
+                   .-.      {temp}
+                ― (   ) ―   {max}-{min}
+                   `-’      {nem}
+                  /   \     -->{hiz}
+             """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
     parcali = ("""
 
-                 \  /       {name}({desc})
-               _ /"".-.     Temp: {temp}
-                 \_(   ).   Max-Min Temp: {max} - {min}
-                 /(___(__)  Hum: {nem}
-                            WndSpd: {hiz}
+                 \  /       {name}
+               _ /"".-.     {temp}
+                 \_(   ).   {max}-{min}
+                 /(___(__)  {nem}
 
-             """).format(desc=desc,name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+
+
+             """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
     hard = ("""
 
-                   .-.      {name}({desc})
-                  (   ).    Temp: {temp}
-                 (___(__)   Max-Min Temp: {max} - {min}
-                ‚‘⚡‘‚⚡‚‘    Hum: {nem}
-                            WndSpd: {hiz}
-
-
-             """).format(desc=desc,name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+                   .-.      {name}
+                  (   ).    {temp}
+                 (___(__)   {max}-{min}
+                ‚‘⚡‘‚⚡‚‘    {nem}
+                             {hiz}
+             """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
     yagmur = ("""
 
 
-               _`/"".-.     {name}({desc})
-                ,\_(   ).   Temp: {temp}
-                 /(___(__)  Max-Min Temp: {max} - {min}
-                 ‚‘‚‘‚‘‚‘   Hum: {nem}
-                            WndSpd: {hiz}
-
-
-             """).format(desc=desc,name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+               _`/"".-.     {name}
+                ,\_(   ).   {temp}
+                 /(___(__)  {max}-{min}
+                 ‚‘‚‘‚‘‚‘   {nem}
+                             {hiz}
+             """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
     kar = ("""
 
-                  .-.       {name}({desc})
-                 (   ).     Temp: {temp}
-                (___(__)    Max-Min Temp: {max} - {min}
-                 * * * *    Hum: {nem}
-                 * * * *    WndSpd: {hiz}
+                  .-.       {name}
+                 (   ).     {temp}
+                (___(__)    {max}-{min}
+                 * * * *    {nem}
+                 * * * *    {hiz}
 
-
-
-             """).format(desc=desc, name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+             """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
     sis = ("""
 
-             _ - _ - _ -    {name}({desc})
-             _ - _ - _      Temp: {temp}
-             _ - _ - _ -    Max-Min Temp: {max} - {min}
-                            Hum: {nem}
-                            WndSpd: {hiz}
+             _ - _ - _ -    {name}
+             _ - _ - _      {temp}
+             _ - _ - _ -    {max}-{min}
+                            {nem}
+                            {hiz}
 
-
-
-             """).format(desc=desc, name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+             """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
     yok=("""
 
-                  |===\      {name}({desc})
-                  |    |     TempTemp: {temp}
-                  | * *|     Max-Min Temp: {max} - {min}
-                  |  | |     Hum: {nem}
-                  |-//-|     WndSpd: {hiz}
+                  |===\      {name}
+                  |    |     Temp{temp}
+                  | * *|     {max}-{min}
+                  |  | |     {nem}
+                  |-//-|     {hiz}
                   ------
 
-
-
-                 """).format(desc=desc, name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
+                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
     if veri[0] == "Clear":
         print(clear)
