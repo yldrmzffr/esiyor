@@ -30,6 +30,8 @@ def load(veri):
                  (___(__)   Max-Min Temp: {max} - {min}
                 ‚‘⚡‘‚⚡‚‘    Hum: {nem}
                             WndSpd: {hiz}
+
+
              """).format(desc=desc,name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
     yagmur = ("""
@@ -40,6 +42,8 @@ def load(veri):
                  /(___(__)  Max-Min Temp: {max} - {min}
                  ‚‘‚‘‚‘‚‘   Hum: {nem}
                             WndSpd: {hiz}
+
+
              """).format(desc=desc,name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
     kar = ("""
@@ -49,6 +53,8 @@ def load(veri):
                 (___(__)    Max-Min Temp: {max} - {min}
                  * * * *    Hum: {nem}
                  * * * *    WndSpd: {hiz}
+
+
 
              """).format(desc=desc, name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
@@ -60,6 +66,8 @@ def load(veri):
                             Hum: {nem}
                             WndSpd: {hiz}
 
+
+
              """).format(desc=desc, name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
     yok=("""
@@ -70,6 +78,8 @@ def load(veri):
                   |  | |     Hum: {nem}
                   |-//-|     WndSpd: {hiz}
                   ------
+
+
 
                  """).format(desc=desc, name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
 
