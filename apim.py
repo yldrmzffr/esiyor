@@ -59,8 +59,8 @@ while True:
     EsemeyenSinif.connected_to_internet()
     sehir=buyut(menu())
     logging.info("{} ile sorgulama yapılmak istendi.".format(sehir))
-
     if  hava.get_info(sehir)==None:
+        logging.info("Sehir None Döndü Ana Menuye Aktarılıyor.")
         menu()
     else:
         weather_main=hava.get_info(sehir).get("weather")[0].get("main")
@@ -76,3 +76,4 @@ while True:
         print("\n\n\n                   	 {}          ".format(sehir))
         my_wheather_list = [weather_main, description, temp, humidity, temp_min, temp_max, speed]
         cizdir.load(my_wheather_list)
+        logging.info("{} EKRANA BASILDI".format(sehir))
