@@ -27,6 +27,7 @@ def menu():
     secim = input("Please Enter Choice ")
 
     logging.info("Menuden {} seçildi.".format(secim))
+
     if secim == "0":
         return konum
 
@@ -57,6 +58,8 @@ logging.info("HOŞGELDİN EKRANI BASILDI")
 while True:
     EsemeyenSinif.connected_to_internet()
     sehir=buyut(menu())
+    logging.info("{} ile sorgulama yapılmak istendi.".format(sehir))
+
     if  hava.get_info(sehir)==None:
         menu()
     else:
