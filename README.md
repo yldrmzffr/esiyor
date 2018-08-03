@@ -1,3 +1,3 @@
 # esiyor
-OYK 18 
-Esmeyen Proje
+OYK18 Python1/A
+Es(e)meyen Proje  (Pencereyi Biz Açmadık..)
