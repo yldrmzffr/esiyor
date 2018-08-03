@@ -1,50 +1,54 @@
-import Esemeyen_sinifi
-hava = Esemeyen_sinifi.Havalar()
+import logging
+import EsemeyenSinif
+import cizdir
+hava = EsemeyenSinif.Havalar()
+
+
+FORMAT='[%(asctime)s] [%(levelname)s] [%(message)s]'
+logging.basicConfig(filename="logs.log", format=FORMAT, level=logging.INFO)
 
 
 def buyut(sehir):
 	sehirbuyuk=sehir.upper()
 	translationTable = str.maketrans("ĞÜŞÖÇİ", "GUSOCI")
 	sehirbuyuk = sehirbuyuk.translate(translationTable)
-
+	logging.info("{} araması {} ile düzeltildi".format(sehir,sehirbuyuk))
 	return sehirbuyuk
 
 
 
 def menu():
     konum=hava.auto_get()
+    logging.info("Konumu Tespit Edildi. Konumu: {}".format(konum))
     print("Current Location:{}".format(konum))
     print("Menu: ")
     print("0 : Current Location")
     print("1 : Another Location")
     secim = input("Please Enter Choice ")
 
-
-
+    logging.info("Menuden {} seçildi.".format(secim))
     if secim == "0":
-       ## Konuma gore cagir.
-       return konum
+        return konum
 
 
     elif secim == "1":
         sehir=input("Please Enter New City : ")
-
+        logging.info("{} Şehri için özel arama yapıldı.".format(sehir))
         return sehir
 
     else:
         print("Incorrect Enter: Try again. \n")
+        logging.warning("{} destekleyan karakter..".format(secim))
         menu()
 
 print("*******************\n")
 print("      WELCOME    \n ")
 print("*******************\n")
+logging.info("HOŞGELDİN EKRANI BASILDI")
 
 
 while True:
-
-
-    sehir=menu()
-    sehir=buyut(sehir)
+    sehir=buyut(menu())
     if  hava.get_info(sehir)==None:
         menu()
     else:
@@ -60,95 +64,4 @@ while True:
         speed = hava.get_info(sehir).get("wind").get("speed")
         print("\n\n\n                   	 {}          ".format(sehir))
         my_wheather_list = [weather_main, description, temp, humidity, temp_min, temp_max, speed]
-        #print(my_wheather_list)
-        veri=my_wheather_list
-        desc = veri[1].find("broken")
-        name = veri[0]
-        temp = veri[2]
-        maxt = veri[5]
-        mint = veri[4]
-        nem = veri[3]
-        hiz = veri[6]
-
-        clear = ("""
-                      \   /     {name}
-                       .-.      {temp}
-                    ― (   ) ―   {max}-{min}
-                       `-’      {nem}
-                      /   \     -->{hiz}
-                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
-        parcali = ("""
-
-                     \  /       {name}
-                   _ /"".-.     {temp}
-                     \_(   ).   {max}-{min}
-                     /(___(__)  {nem}
-
-
-
-                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
-
-        hard = ("""
-
-                       .-.      {name}
-                      (   ).    {temp}
-                     (___(__)   {max}-{min}
-                    ‚‘⚡‘‚⚡‚‘    {nem}
-                                 {hiz}
-                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
-
-        yagmur = ("""
-
-
-                   _`/"".-.     {name}
-                    ,\_(   ).   {temp}
-                     /(___(__)  {max}-{min}
-                     ‚‘‚‘‚‘‚‘   {nem}
-                                 {hiz}
-                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
-
-        kar = ("""
-
-                      .-.       {name}
-                     (   ).     {temp}
-                    (___(__)    {max}-{min}
-                     * * * *    {nem}
-                     * * * *    {hiz}
-
-                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
-
-        sis = ("""
-
-                 _ - _ - _ -    {name}
-                 _ - _ - _      {temp}
-                 _ - _ - _ -    {max}-{min}
-                                {nem}
-                                {hiz}
-
-                 """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
-
-        yok=("""
-
-                      |===\      {name}
-                      |    |     Temp{temp}
-                      | * *|     {max}-{min}
-                      |  | |     {nem}
-                      |-//-|     {hiz}
-                      ------
-
-                     """).format(name=name, temp=temp, max=maxt, min=mint, hiz=hiz, nem=nem)
-        temp = veri[2]
-        maxt = veri[5]
-        mint = veri[4]
-        nem = veri[3]
-        hiz = veri[6]
-        if veri[0] == "Clear":
-            print(clear)
-        elif veri[0] == "Rain" :
-            print(yagmur)
-        elif veri[0] == "Fog":
-            print(sis)
-        elif veri[0] == "Clouds":
-            print(parcali)
-        else:
-            print(yok)
+        cizdir.load(my_wheather_list)
