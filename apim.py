@@ -3,7 +3,7 @@ import EsemeyenSinif
 import cizdir
 hava = EsemeyenSinif.Havalar()
 
-
+EsemeyenSinif.connected_to_internet()
 FORMAT='[%(asctime)s] [%(levelname)s] [%(message)s]'
 logging.basicConfig(filename="logs.log", format=FORMAT, level=logging.INFO)
 
@@ -42,7 +42,7 @@ def menu():
         menu()
 
 
-
+EsemeyenSinif.connected_to_internet()
 print("""
 *******************************************************
     .-.                                   \   /
@@ -55,6 +55,7 @@ logging.info("HOŞGELDİN EKRANI BASILDI")
 
 
 while True:
+    EsemeyenSinif.connected_to_internet()
     sehir=buyut(menu())
     if  hava.get_info(sehir)==None:
         menu()

@@ -1,7 +1,16 @@
 import logging
 import json
 import requests
-
+def connected_to_internet(url='http://www.google.com/', timeout=5):
+    try:
+        _ = requests.get(url, timeout=timeout)
+        return True
+    except requests.ConnectionError:
+        print("No internet connection available.")
+        input("try again?")
+        connected_to_internet()
+    return False
+connected_to_internet()
 FORMAT='[%(asctime)s] [%(levelname)s] [%(message)s]'
 logging.basicConfig(filename="logs.log", format=FORMAT, level=logging.INFO)
 
